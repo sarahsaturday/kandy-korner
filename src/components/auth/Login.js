@@ -36,7 +36,7 @@ export const Login = () => {
                     <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
-                        <input type="email"
+                        <input id="inputEmail" type="email"
                             value={email}
                             onChange={evt => set(evt.target.value)}
                             className="form-control"
@@ -56,4 +56,3 @@ export const Login = () => {
         </main>
     )
 }
-

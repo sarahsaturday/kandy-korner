@@ -1,17 +1,4 @@
-/* .navbar {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: left;
-}
-
-.navbar__item {
-    flex-basis: 20%;
-    list-style-type: none;
-}
-
-.navbar__logout {
-    margin-left: auto;
-} */
+/* NavBar styling */
 
 .navbar {
     display: flex;
@@ -28,6 +15,8 @@
     margin-left: auto;
   }
   
+  /* Locations button styling */
+
   .navbar__locations-list {
     list-style-type: none;
     padding: 0;
@@ -42,4 +31,36 @@
   .navbar__locations-list li:nth-child(even) {
     background-color: #e9e9e9;
   }
+
+  /* Products button styling */
+
+  .navbar__products {
+    margin-left: 20px;
+  }
   
+  .navbar__products-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .navbar__products-list li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .navbar__products-list li:nth-child(even) {
+    background-color: #e9e9e9;
+  }
+
+  /* Top Priced button styling */
+  
+  .navbar__top-priced {
+    margin-left: 20px;
+  }
+
+  /* Add Product button styling */
+  
+  .navbar__add-product {
+    margin-left: 20px;
+  }
