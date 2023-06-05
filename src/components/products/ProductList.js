@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export const ProductList = () => {
+export const ProductList = ({ newProduct }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -10,7 +10,13 @@ export const ProductList = () => {
         setProducts(data);
       })
       .catch((error) => console.error(error));
-  }, []);
+  }, [newProduct]); // Add newProduct as a dependency to listen for changes
+
+  useEffect(() => {
+    if (newProduct) {
+      setProducts((prevProducts) => [...prevProducts, newProduct]);
+    }
+  }, [newProduct]); // Add another useEffect to update the products when newProduct changes
 
   return (
     <div>

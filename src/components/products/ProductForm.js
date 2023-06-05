@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './ProductForm.css'
 import { ProductList } from './ProductList';
 
@@ -67,6 +67,7 @@ export const ProductForm = () => {
   return (
     <div className="product-form">
       <h2>Add New Product</h2>
+      <Link to="/" className="close-link">X</Link>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="productName">Product Name:</label>
@@ -116,7 +117,7 @@ export const ProductForm = () => {
           Add Product
         </button>
       </form>
-      <ProductList />
+      <ProductList newProduct={newProduct} />
     </div>
   );
 };

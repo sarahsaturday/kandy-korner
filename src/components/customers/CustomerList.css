@@ -1,0 +1,80 @@
+/* CustomerList.css */
+
+.customer-list {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .customer-list h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .customer-list h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .close-container {
+    position: absolute;
+    top: 1px;
+    right: 2px;
+  }
+  
+  .customer-list .close-link {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
+  }
+  
+  .customer-list .close-link:hover {
+    color: darkred;
+  }
+  
+  .customer-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .customer-list li {
+    margin-bottom: 10px;
+  }
+  
+  .customer-list li a {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .customer-list li a:hover {
+    color: #333;
+  }
+  
+  .customer-list li span {
+    font-weight: bold;
+  }
+  
+  .customer-details {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+  }
+  
+  .customer-details h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .customer-details p {
+    margin-bottom: 5px;
+  }
+  

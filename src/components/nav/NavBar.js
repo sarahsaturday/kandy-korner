@@ -8,6 +8,9 @@ export const NavBar = () => {
   const [showProducts, setShowProducts] = useState(false);
   const [showTopPriced, setShowTopPriced] = useState(false);
   const [isStaff, setIsStaff] = useState(false);
+  const [showProductForm, setShowProductForm] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+
 
   const [data, setData] = useState({
     locations: [],
@@ -55,7 +58,9 @@ export const NavBar = () => {
     const storedUser = localStorage.getItem("kandy_user");
     const user = JSON.parse(storedUser)
     const userIsStaff = user && user.staff === true;
+    const userIsLoggedIn = user !== null;
     setIsStaff(userIsStaff);
+    setShowSearch(userIsLoggedIn);
 
   }, []);
 
@@ -69,6 +74,18 @@ export const NavBar = () => {
 
   const handleTopPricedClick = () => {
     setShowTopPriced(!showTopPriced);
+  };
+
+  const handleAddProductClick = () => {
+    setShowProductForm(!showProductForm);
+  };
+
+  const handleEmployeePortalClick = (event) => {
+    const selectedOption = event.target.value;
+    if (selectedOption) {
+      navigate(selectedOption);
+      event.target.value = "";
+    }
   };
 
   const { locations, products } = data;
@@ -143,9 +160,19 @@ export const NavBar = () => {
         )}
       </li>
       {isStaff && (
-        <li className="navbar__item navbar__add-product">
-          <Link className="navbar__link" to="/products">
-            Add Product
+        <li className="navbar__item navbar__employee-portal">
+          <select className="navbar__link" onChange={handleEmployeePortalClick}>
+            <option value="">Employee Portal</option>
+            <option value="/products">Add Product</option>
+            <option value="/employees">Add Employee</option>
+            <option value="/customers">View Customers</option>
+          </select>
+        </li>
+      )}
+      {showSearch && (
+        <li className="navbar__item navbar__search">
+          <Link className="navbar__link" to="/search">
+            Search
           </Link>
         </li>
       )}
